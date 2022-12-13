@@ -7,14 +7,19 @@ import {
 } from "./action/actions"
 
 function App(props) {
+  // event handler
+  const handleIncrease = () => {
+    //dispatch action
+    props.increaseCounter()
+  };
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello world with React and PHAM TRUNG HIEU</h1>
+        <h1>Hello world with {props.name} and PHAM TRUNG HIEU</h1>
         <div>Count: {props.count}</div>
 
-        <button onClick={() => props.increaseCounter()}>Increase Count</button>
+        <button onClick={() => handleIncrease()}>Increase Count</button>
 
         <button onClick={() => props.decreaseCounter()}>Decrease Count</button>
       </header>
@@ -25,6 +30,7 @@ function App(props) {
 const mapStateToProps = state => {
   return {
     count: state.counter.count,
+    name: state.counter.name
   }
 }
 

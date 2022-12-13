@@ -4,9 +4,10 @@ import { INCREMENT, DECREMENT } from '../action/types';
 const INITIAL_STATE = {
 
     count: 0,
+    name: 'Hoai Thu'
 };
 
-const reducer = (state = INITIAL_STATE, action) => {
+const counterReducer = (state = INITIAL_STATE, action) => {
 
     switch (action.type) {
 
@@ -31,4 +32,4 @@ const reducer = (state = INITIAL_STATE, action) => {
 
 };
 
-export default reducer;
+export default counterReducer;
